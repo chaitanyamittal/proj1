@@ -1,2 +1,9 @@
 <td><%= link_to trainer.name, trainer %></td>
 <td><%= link_to trainer.email, trainer %></td>
+<td><ul> <% trainer.pokemons.each do |pokemon| %>
+	<li>name: <%= pokemon.name %>, level: <%= pokemon.level %>, health: <%= pokemon.health %></li>
+	<%= button_to "Damage!", damage_path(id: pokemon), :class => "button small", :method => :patch %>
+	<% end %></ul>
+
+</td>
+
